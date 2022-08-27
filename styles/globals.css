@@ -1,26 +1,327 @@
-html,
-body {
-  padding: 0;
-  margin: 0;
-  font-family: -apple-system, BlinkMacSystemFont, Segoe UI, Roboto, Oxygen,
-    Ubuntu, Cantarell, Fira Sans, Droid Sans, Helvetica Neue, sans-serif;
-}
-
-a {
-  color: inherit;
-  text-decoration: none;
-}
+@import url("https://fonts.googleapis.com/css2?family=Open+Sans:wght@300;400;500;600;700;800&display=swap");
 
 * {
+  margin: 0;
+  padding: 0;
   box-sizing: border-box;
+  font-family: "Open Sans", sans-serif;
 }
 
-@media (prefers-color-scheme: dark) {
-  html {
-    color-scheme: dark;
+body {
+  background-color: #fcfcff;
+  overflow-x: hidden;
+}
+
+img {
+  width: 100%;
+}
+
+button {
+  cursor: pointer;
+  border: none;
+}
+
+ul li {
+  list-style: none;
+}
+
+/* UTILITITES */
+
+.row {
+  display: flex;
+  align-items: center;
+}
+
+.col {
+  display: flex;
+  flex-direction: column;
+}
+
+.between {
+  justify-content: space-between;
+}
+
+.flex-wrap {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  align-items: flex-start;
+  gap: 2rem;
+  width: 95%;
+  margin: 0 auto;
+}
+
+.avatar {
+  width: 40px;
+  height: 40px;
+  border-radius: 50%;
+  background-color: blueviolet;
+  background-image: url("https://images.unsplash.com/photo-1494790108377-be9c29b29330?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxzZWFyY2h8Mnx8cHJvZmlsZXxlbnwwfHwwfHw%3D&w=1000&q=80");
+  background-repeat: no-repeat;
+  background-position: center;
+  background-size: cover;
+  /* border: 2px black solid; */
+}
+
+.tiny-btn {
+  background-color: #5dab41;
+  color: #fff;
+  border-radius: 30px;
+  display: inline-flex;
+  gap: 0.2rem;
+  align-items: center;
+  justify-content: center;
+  padding: 5px;
+  font-size: 0.8rem;
+  min-width: 50px;
+}
+
+.circle {
+  width: 30px;
+  height: 30px;
+  border: 1px gainsboro solid;
+  border-radius: 50%;
+  display: grid;
+  place-content: center;
+}
+
+.gap {
+  gap: 0.5rem;
+}
+
+.big {
+  font-size: 1.4rem;
+}
+
+.bookmark-icon {
+  cursor: pointer;
+}
+
+/* NAVBAR */
+
+.navbar {
+  width: 100%;
+  border-bottom: 1px gainsboro solid;
+  padding: 20px;
+  min-height: 80px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  position: sticky;
+  top: 0;
+  background-color: #fff;
+  z-index: 999;
+}
+
+.logo {
+  color: #657adc;
+}
+
+.navbar .row {
+  gap: 1rem;
+}
+
+.navbar .location h4 {
+  display: inline-flex;
+  align-items: center;
+}
+
+.navbar .row button {
+  border: 1px gainsboro solid;
+  border-radius: 25px;
+  padding: 10px;
+  background-color: transparent;
+  min-width: 80px;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 0.5rem;
+}
+
+/* Traveller Bar */
+
+.traveller-bar {
+  width: 95%;
+  margin: 2rem auto;
+}
+
+.traveller-bar span {
+  color: gray;
+  font-size: 0.8rem;
+  font-weight: 400;
+}
+
+/* BOOKMARK CARD */
+
+.bookmark-card {
+  width: 340px;
+  min-height: 420px;
+  border-radius: 10px;
+  background-color: #fff;
+  box-shadow: rgba(0, 0, 0, 0.02) 0px 1px 3px 0px,
+    rgba(27, 31, 35, 0.15) 0px 0px 0px 1px;
+}
+
+.bookmark-card .image {
+  height: 200px;
+  width: 100%;
+  background-image: url("https://media.gettyimages.com/photos/traditional-suburban-house-picture-id103761765?s=2048x2048");
+  background-repeat: no-repeat;
+  background-position: center;
+  background-size: cover;
+  position: relative;
+}
+
+.bookmark-card .image button {
+  padding: 8px 15px;
+  border-radius: 15px;
+  position: absolute;
+  bottom: 1rem;
+  left: 1rem;
+  border: none;
+  background-color: #657adc;
+  color: #fff;
+  font-weight: 600;
+}
+
+.bookmark-card .col {
+  gap: 0.3rem;
+}
+
+.bookmark-card .col h4 {
+  font-weight: 500;
+}
+
+.bookmark-card .gap .col span {
+  color: #acacc3;
+  font-size: 0.7rem;
+}
+
+.bkm-top {
+  padding: 15px 10px;
+}
+
+.bkm-bottom button {
+  border: 1px gainsboro solid;
+  background-color: transparent;
+  padding: 5px 15px;
+  border-radius: 15px;
+  font-weight: 600;
+}
+
+.bkm-bottom {
+  padding: 15px;
+  gap: 2rem;
+}
+
+.bkm-bottom h2 {
+  margin-top: 0.5rem;
+  font-size: 1.2rem;
+}
+
+.bkm-bottom span {
+  font-weight: 400;
+  font-size: 0.8rem;
+}
+
+/* FOOTER */
+
+footer {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  border-top: 1px gainsboro solid;
+  margin-top: 4rem;
+  background-color: #fff;
+  width: 100%;
+}
+
+footer .col {
+  align-items: flex-start;
+}
+
+footer h2 {
+  color: #657adc;
+}
+
+footer h5 {
+  font-size: 1.2rem;
+}
+
+footer ul {
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+  margin-top: 1rem;
+}
+
+footer li {
+  cursor: pointer;
+  color: #696887;
+  display: inline;
+}
+
+footer .container {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: flex-start;
+  justify-content: space-between;
+  width: 90%;
+  margin: 2rem auto;
+  padding: 3rem 0;
+  border-bottom: 1px gainsboro solid;
+  gap: 1.5rem;
+}
+
+.footer-text {
+  width: 70%;
+  text-align: center;
+  align-self: center;
+  padding-bottom: 2rem;
+  color: #696887;
+  max-width: 80vw;
+}
+
+.social {
+  font-size: 0.9rem;
+  color: #657adc;
+}
+
+.social p {
+  font-size: 1rem;
+  margin-top: 2rem;
+  color: #000;
+  font-weight: 500;
+}
+
+.download {
+  width: 200px;
+  cursor: pointer;
+  margin-top: 0.5rem;
+}
+
+/* MEDIA QUERIES */
+
+@media (max-width: 1000px) {
+  .nav-row-2 {
+    display: none;
   }
-  body {
-    color: white;
-    background: black;
+
+  .flex-wrap {
+    justify-content: center;
+  }
+}
+
+@media (max-width: 450px) {
+  .nav-row-1 {
+    flex-direction: column;
+    align-items: flex-start;
+    justify-content: center;
+    gap: 0 !important;
+  }
+
+  .logo {
+    display: none;
   }
 }
