@@ -45,8 +45,8 @@ function Footer() {
           </ul>
         </div>
         <div className="col gap">
-          <img src="./play-store.svg" alt="" className="download" />
-          <img src="./app-store.svg" alt="" className="download" />
+          <img src="./play-store.svg" alt="play-store" className="download" />
+          <img src="./app-store.svg" alt="app-store" className="download" />
         </div>
       </div>
       <div className="footer-text">
